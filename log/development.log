@@ -1,0 +1,350 @@
+  [1m[35m (121.9ms)[0m  [1m[35mCREATE DATABASE "ruby_pet_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE DATABASE "ruby_pet_development" ENCODING = 'unicode'[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE "ruby_pet_development" ENCODING = 'unicode'[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4302473094165738555)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20220720122304)
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220720122304"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-07-20 12:27:15.862205"], ["updated_at", "2022-07-20 12:27:15.862205"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4302473094165738555)[0m
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/sign_up?ref=hackernoon.com" for ::1 at 2022-07-20 14:29:20 +0200
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"ref"=>"hackernoon.com"}
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 213)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 555)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 41.0ms | Allocations: 9636)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/ddaradics-remote/Documents/ruby/ruby_pet/public/packs
+[Webpacker] Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-property-in-object since the "loose" mode option was set to "true" for @babel/plugin-proposal-class-properties.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+to the "plugins" section of your Babel config.
+Though the "loose" option was set to "false" in your @babel/preset-env config, it will not be used for @babel/plugin-proposal-private-methods since the "loose" mode option was set to "true" for @babel/plugin-proposal-private-property-in-object.
+The "loose" option must be the same for @babel/plugin-proposal-class-properties, @babel/plugin-proposal-private-methods and @babel/plugin-proposal-private-property-in-object (when they are enabled): you can silence this warning by explicitly adding
+	["@babel/plugin-proposal-private-methods", { "loose": true }]
+to the "plugins" section of your Babel config.
+
+[Webpacker] Hash: 723d3d26ed117f081b59
+Version: webpack 4.46.0
+Time: 1682ms
+Built at: 20/07/2022 14:29:25
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-69f1934bcb81066d6a9f.js    120 KiB  application  [emitted] [immutable]  application
+js/application-69f1934bcb81066d6a9f.js.map    136 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-69f1934bcb81066d6a9f.js js/application-69f1934bcb81066d6a9f.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 4561ms (Views: 4519.8ms | ActiveRecord: 8.3ms | Allocations: 35290)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-20 14:29:28 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1314)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 5409)
+
+
+Started POST "/users" for ::1 at 2022-07-20 14:29:46 +0200
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZdhArdQMgsvOZpIH1PYdZjqZrqEYPFAyTLz9K2XtAQ8/Aa5vLkKOWozR/bDdnk/l+Ks0d+e+//68l/G9zMmOnw==", "user"=>{"email"=>"ddaradics@diligent.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (2.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ddaradics@diligent.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ddaradics@diligent.com"], ["encrypted_password", "$2a$12$7DZkkHOvIecbWjKlleg7z.A.qKtJlDG2mv3v9IWUdw4JChQEoRkF6"], ["created_at", "2022-07-20 12:29:46.711501"], ["updated_at", "2022-07-20 12:29:46.711501"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 449ms (ActiveRecord: 10.6ms | Allocations: 11587)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:29:46 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.7ms | Allocations: 199)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 967)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:29:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 15ms (ActiveRecord: 7.6ms | Allocations: 2638)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:29:52 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 11.9ms | Allocations: 191)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 907)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:29:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms | Allocations: 1854)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:29:52 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.6ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 403)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:30:04 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 2.4ms | Allocations: 1846)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:30:04 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 404)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:35:54 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 13ms (ActiveRecord: 3.0ms | Allocations: 1969)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:35:55 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 8)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 416)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:35:55 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 1.7ms | Allocations: 1846)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:35:55 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 401)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:35:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms | Allocations: 1859)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:35:59 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 7)
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 409)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:46:46 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.1ms | Allocations: 190)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 893)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:46:47 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 405)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:46:52 +0200
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms | Allocations: 1947)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:46:52 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 415)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-20 14:46:56 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.6ms | Allocations: 1862)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:46:56 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 408)
+
+
+Started GET "/users/sign_up" for ::1 at 2022-07-20 14:47:03 +0200
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms | Allocations: 1854)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:47:03 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 406)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:47:24 +0200
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.3ms | Allocations: 319)
+Completed 200 OK in 28ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 2861)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:48:25 +0200
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/ddaradics-remote/.gem/gems/railties-6.0.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.7ms | Allocations: 319)
+Completed 200 OK in 44ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 2858)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:53:04 +0200
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+config/routes.rb:4:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2022-07-20 14:54:54 +0200
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 202)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 64ms (Views: 35.9ms | ActiveRecord: 10.7ms | Allocations: 15832)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2022-07-20 14:54:58 +0200
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Nq4gZnnrfV1SJFedl/5b5m/G/WkG5j9fWz1z9l8ESvVsd86kg6VxzBCTOCqelgllrfRnv/lkkJOrFn9g9iDFZQ=="}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 15ms (ActiveRecord: 1.6ms | Allocations: 5042)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:54:58 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 4077)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:54:59 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 651)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 3732)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.0ms | Allocations: 9227)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-20 14:55:04 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 152)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1339)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 5610)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-07-20 14:55:11 +0200
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"2P3iivqIouLcNMHVMeBGQ086FqE/SEogpTzjAELxAPj4MyHfGadjmqwGnCUjfUqISBk36WstXAIqtgDfbUxTiQ==", "user"=>{"email"=>"ddaradics@diligent.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "ddaradics@diligent.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 275ms (ActiveRecord: 1.6ms | Allocations: 10982)
+
+
+Started GET "/" for ::1 at 2022-07-20 14:55:11 +0200
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered main/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 1.5ms | Allocations: 4929)
+
+
